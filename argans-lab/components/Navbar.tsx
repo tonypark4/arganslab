@@ -31,15 +31,20 @@ export default function Navbar() {
 
             <div
               className="
-                absolute left-0 top-full hidden group-hover:flex flex-col 
-                shadow-lg rounded-md w-48 z-50
-                -mt-[1px] pt-3
-                bg-white/70 backdrop-blur-md
+                absolute left-0 top-full
+                opacity-0 pointer-events-none
+                group-hover:opacity-100 group-hover:pointer-events-auto
+                transition-all duration-200 ease-out
+                translate-y-1 group-hover:translate-y-0
+                flex flex-col w-44 z-50
+
+                bg-white/25 backdrop-blur-xl shadow-lg rounded-md
+                py-[2px]
               "
             >
               <Link
                 href="/featured-gallery"
-                className="px-4 py-2 hover:bg-gray-100 hover:text-blue-600"
+                className="px-4 py-1 text-[15px] hover:bg-white/40 hover:text-blue-600 transition"
               >
                 Featured Gallery
               </Link>
@@ -54,15 +59,20 @@ export default function Navbar() {
 
             <div
               className="
-                absolute left-0 top-full hidden group-hover:flex flex-col 
-                shadow-lg rounded-md w-48 z-50
-                -mt-[1px] pt-3
-                bg-white/70 backdrop-blur-md
+                absolute left-0 top-full
+                opacity-0 pointer-events-none
+                group-hover:opacity-100 group-hover:pointer-events-auto
+                transition-all duration-200 ease-out
+                translate-y-1 group-hover:translate-y-0
+                flex flex-col w-44 z-50
+
+                bg-white/25 backdrop-blur-xl shadow-lg rounded-md
+                py-[2px]
               "
             >
               <Link
                 href="/accomplishments"
-                className="px-4 py-2 hover:bg-gray-100 hover:text-blue-600"
+                className="px-4 py-1 text-[15px] hover:bg-white/40 hover:text-blue-600 transition"
               >
                 Accomplishments
               </Link>
@@ -85,15 +95,20 @@ export default function Navbar() {
 
             <div
               className="
-                absolute left-0 top-full hidden group-hover:flex flex-col 
-                shadow-lg rounded-md w-48 z-50
-                -mt-[1px] pt-3
-                bg-white/70 backdrop-blur-md
+                absolute left-0 top-full
+                opacity-0 pointer-events-none
+                group-hover:opacity-100 group-hover:pointer-events-auto
+                transition-all duration-200 ease-out
+                translate-y-1 group-hover:translate-y-0
+                flex flex-col w-44 z-50
+
+                bg-white/25 backdrop-blur-xl shadow-lg rounded-md
+                py-[2px]
               "
             >
               <Link
                 href="/careers"
-                className="px-4 py-2 hover:bg-gray-100 hover:text-blue-600"
+                className="px-4 py-1 text-[15px] hover:bg-white/40 hover:text-blue-600 transition"
               >
                 Careers
               </Link>

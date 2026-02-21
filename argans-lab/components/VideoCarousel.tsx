@@ -4,42 +4,38 @@ import { useState } from "react";
 
 export default function VideoCarousel() {
   const videos = [
-    "gjokLVjjBYU",
-    "e2DGttDIhos",
-    "LX7VlCbCtK8",
-    "e_oYgZ9pO9E",
-    "U7V_M4lk6Rk",
+    { src: "/videos/gradbytes-1.mp4", title: "GradBytes Episode 1" },
+    { src: "/videos/gradbytes-2.mp4", title: "GradBytes Episode 2" },
+    { src: "/videos/gradbytes-3.mp4", title: "GradBytes Episode 3" },
+    { src: "/videos/gradbytes-4.mp4", title: "GradBytes Episode 4" },
+    { src: "/videos/gradbytes-5.mp4", title: "GradBytes Episode 5" },
   ];
 
   const [current, setCurrent] = useState(0);
 
-  const nextVideo = () => {
-    setCurrent((prev) => (prev + 1) % videos.length);
-  };
-
-  const prevVideo = () => {
+  const nextVideo = () => setCurrent((prev) => (prev + 1) % videos.length);
+  const prevVideo = () =>
     setCurrent((prev) => (prev - 1 + videos.length) % videos.length);
-  };
-
-  // Compute the 3‑video preview window
-  const previewStart = Math.max(0, current - 1);
-  const previewEnd = Math.min(videos.length, previewStart + 3);
-  const previewVideos = videos.slice(previewStart, previewEnd);
 
   return (
     <section className="max-w-6xl w-full px-6 py-16 bg-gray-50">
-      <h2 className="text-2xl font-semibold mb-4">
+      <h2
+        className="text-3xl font-semibold mb-4 text-center"
+        style={{ color: "#076FBD" }}
+      >
         GradBytes: 60 Seconds of Grad Student Genius!
       </h2>
 
       {/* MAIN VIDEO */}
-      <div className="w-full aspect-video mb-6">
-        <iframe
-          className="w-full h-full rounded-lg shadow-md"
-          src={`https://www.youtube.com/embed/${videos[current]}`}
-          title="Research Video"
-          allowFullScreen
+      <div className="w-full aspect-video mb-6 bg-black rounded-lg shadow-md overflow-hidden">
+        <video
+          key={videos[current].src}
+          src={videos[current].src}
+          controls
+          preload="metadata"
+          className="w-full h-full object-contain"
         />
+
       </div>
 
       {/* CONTROLS */}
@@ -61,33 +57,32 @@ export default function VideoCarousel() {
         </button>
       </div>
 
-      {/* PREVIEW STRIP — only 3 videos */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        {previewVideos.map((id) => {
-          const index = videos.indexOf(id);
-
-          return (
+      {/* PREVIEW STRIP — EXACT SAME AS FEATURED VIDEO CAROUSEL */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          {videos.map((vid, index) => (
             <div
-              key={id}
+              key={vid.src}
               onClick={() => setCurrent(index)}
               className={`cursor-pointer border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition ${
-                current === index
-                  ? "border-[3px]"
-                  : "border"
+                current === index ? "border-[3px]" : "border"
               }`}
               style={{
                 borderColor: current === index ? "#076FBD" : "#ccc",
               }}
             >
-              <iframe
-                className="w-full aspect-video"
-                src={`https://www.youtube.com/embed/${id}`}
-                title={`Preview ${index + 1}`}
-              />
+              <div className="w-full h-20 bg-black overflow-hidden">
+                <video
+                  src={vid.src}
+                  muted
+                  preload="metadata"
+                  className="w-full h-full object-cover opacity-90 hover:opacity-100 transition"
+                />
+
+              </div>
             </div>
-          );
-        })}
-      </div>
+          ))}
+        </div>
+
     </section>
   );
 }

@@ -1,12 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import ResearchOverview from "@/components/ResearchOverview";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
-      <section className="bg-gray-100 py-10">
+      
+      <section className="bg-gray-100 py-12
+      ">
         <div className="max-w-4xl mx-auto text-center px-6">
           <p className="text-lg md:text-xl italic text-gray-700 leading-snug relative">
             <span className="text-5xl absolute -left-4 -top-4 text-gray-300">“</span>
@@ -17,6 +20,7 @@ export default function Home() {
 
         </div>
       </section>
+      <ResearchOverview />
 
     </>
   );
