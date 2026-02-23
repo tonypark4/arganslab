@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="py-1">   {/* thinner space above/below */}
       <div
         className="max-w-5xl mx-auto bg-[#F3E8D8] rounded-md 
-        px-2 py-1 flex flex-col lg:flex-row items-center gap-4"
+        px-8 py-10 flex flex-col lg:flex-row items-center gap-4"
       >
         {/* LEFT TEXT */}
             <div className="flex-1 max-w-xl pl-8">

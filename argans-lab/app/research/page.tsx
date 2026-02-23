@@ -1,11 +1,11 @@
-import Navbar from "@/components/Navbar";
+
 import Image from "next/image";
 import VideoCarousel from "@/components/VideoCarousel";
 
 export default function ResearchPage() {
   return (
     <>
-      <Navbar />
+
 
       {/* SECTION 1 */}
       <section className="max-w-6xl mx-auto px-6 py-16">

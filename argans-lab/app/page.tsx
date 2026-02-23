@@ -1,11 +1,11 @@
-import Navbar from "@/components/Navbar";
+
 import Hero from "@/components/Hero";
 import ResearchOverview from "@/components/ResearchOverview";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+
       <Hero />
       
       <section className="bg-gray-100 py-12

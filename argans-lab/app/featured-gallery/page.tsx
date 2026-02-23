@@ -1,6 +1,5 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { useState } from "react";
 import FeaturedVideoCarousel from "@/components/FeaturedVideoCarousel";
@@ -44,7 +43,6 @@ export default function FeaturedGallery() {
 
   return (
     <>
-      <Navbar />
 
       {/* TITLE */}
       <section className="max-w-6xl mx-auto px-6 py-16 text-center">
